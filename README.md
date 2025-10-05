@@ -34,15 +34,47 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+module jkff(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial 
+begin
+q=1'b0;
+q=1'b1;
+end 
+
+always @(posedge clk)
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+<img width="1296" height="479" alt="image" src="https://github.com/user-attachments/assets/142b4be4-7f1c-41cb-8c09-0c77168de866" />
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/aa699b2d-c020-42d2-80cc-725a4aa55ef7" />
+
+
 **RESULTS**
+
+Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
